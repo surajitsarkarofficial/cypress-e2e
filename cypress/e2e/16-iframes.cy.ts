@@ -22,4 +22,10 @@ describe('Handle IFrames', () => {
             })
         })
     });
+
+    it('handle iframe using plugin',()=>{
+        cy.visit("https://automationtesting.co.uk/iframes.html")
+        cy.frameLoaded("iframe[src='index.html']")
+        cy.iframe("iframe[src='index.html']").find('#banner h1').should('have.text',"Testing Arena");
+    })
 });
