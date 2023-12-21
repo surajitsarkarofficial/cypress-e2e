@@ -7,7 +7,7 @@ describe('Handle IFrames', () => {
             cy.wrap(body).type("Typing from Cypress")
         })
     });
-    it.only('More iFrame', () => {
+    it('More iFrame', () => {
         cy.visit("https://automationtesting.co.uk/iframes.html")
         cy.get('iframe').then(($frame)=>{
             const innerFrame = $frame.contents().find('body')
