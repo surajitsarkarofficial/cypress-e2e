@@ -30,7 +30,7 @@ describe('Handle Alerts / Popups ', () => {
         })
         
     });
-    it.only('handle prompt popup', () => {
+    it('handle prompt popup', () => {
         cy.visit("https://the-internet.herokuapp.com/javascript_alerts");
         cy.window().then(($win)=>{
             cy.stub($win,"prompt").returns("This text is entered via cypress code");
