@@ -77,11 +77,10 @@ describe('Undestand various wasy to intercept a request and response', () => {
         //This click will trigger the call to the api we are intercepting
         cy.get("button[routerlink='/library']").click();
 
-        //We will wait for the promise returned by the intercept object to be resolved
-        cy.wait("@beFeIntegeration")
-
-        //Now lets verify in the UI that we are getting the actual response
-       cy.get("table tbody>tr").should('have.length.above',1)
+        //We will wait for the promise returned by the intercept object to be resolved and verify that BE response and data in FE is same
+        cy.wait("@beFeIntegeration").then(({response})=>{
+            cy.get("table tbody>tr").should('have.length',response.body.length)
+        })
 
 
         
