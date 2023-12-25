@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 /// <reference types="@cypress/xpath" />
 /// <reference types="cypress-iframe" />
+/// <reference types="neat-csv" />
 // ***********************************************
 // This example commands.ts shows you how to
 // create various custom commands and overwrite
