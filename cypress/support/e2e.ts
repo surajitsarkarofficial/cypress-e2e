@@ -25,3 +25,7 @@ require('@cypress/xpath')
 require('cypress-iframe')
 //neat-csv dependency
 require('neat-csv')
+//covert-excel-to-json
+require('convert-excel-to-json')
+//file server
+require('fs')
