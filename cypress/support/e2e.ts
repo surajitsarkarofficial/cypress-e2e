@@ -23,3 +23,5 @@ import './commands'
 require('@cypress/xpath')
 //cypress iframe dependency
 require('cypress-iframe')
+//neat-csv dependency
+require('neat-csv')
