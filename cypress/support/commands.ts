@@ -38,3 +38,19 @@
 //     }
 //   }
 // }
+// cypress/support/index.ts
+Cypress.Commands.add('loginToEcom', (uname,pwd) => {
+  cy.request({
+    url:"https://rahulshettyacademy.com/api/ecom/auth/login",
+    method:"POST",
+    body:{
+        userEmail: uname, 
+        userPassword: pwd
+    }
+}).then((response)=>{
+    expect(response.status).to.eq(200);
+    //Extract the token from the response and store it in env variable named token.
+    Cypress.env("token",response.body.token);
+    cy.log("token is "+ response.body.token)
+})
+  })
