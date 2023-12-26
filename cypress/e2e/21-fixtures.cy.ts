@@ -13,6 +13,7 @@ describe('Handle data from fixtures', () => {
         cy.get("#exampleInputPassword1").type(testData.password);
         cy.get("#exampleCheck1").check();
         cy.get("#exampleFormControlSelect1").select(testData.gender);
+        cy.get("#inlineRadio2").check();
         cy.get("input[name='bday']").clear().type(testData.dob);
         cy.get("input[value='Submit']").click();
         cy.get("div.alert-success").should('include.text',testData["success-msg"])
@@ -25,6 +26,7 @@ describe('Handle data from fixtures', () => {
             cy.get("#exampleInputPassword1").type(data["password"]);
             cy.get("#exampleCheck1").check();
             cy.get("#exampleFormControlSelect1").select(data["gender"]);
+            cy.get("#inlineRadio1").check();
             cy.get("input[name='bday']").clear().type(data["dob"]);
             cy.get("input[value='Submit']").click();
             cy.get("div.alert-success").should('include.text',testData["success-msg"])
