@@ -1,0 +1,8 @@
+{
+    "name":"Suro",
+    "email":"hello@test.com",
+    "password":"mydata@1234",
+    "gender":"Male",
+    "dob":"1991-07-24",
+    "success-msg":"Success! The Form has been submitted successfully!."
+}
