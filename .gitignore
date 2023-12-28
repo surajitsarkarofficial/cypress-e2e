@@ -2,5 +2,10 @@ node_modules
 package-lock.json
 cypress/screenshots
 cypress/downloads/
+cypress/results/*
+cypress/videos
+cypress/screenshots
 .DS_Store
 cypress/.DS_Store
+mochawesome.json
+mochawesome-report/*

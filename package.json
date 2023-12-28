@@ -4,7 +4,13 @@
   "description": "Cypress End to End Project learning",
   "main": "index.js",
   "scripts": {
-    "cypress": "cypress open --e2e --browser chrome"
+    "cypress": "cypress open --e2e --browser chrome",
+    "runTest":"npx cypress run --headed --browser chrome --spec cypress/e2e/6-fill-form.cy.ts cypress/e2e/9-radio.cy.ts",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "delete-mochawesome-json": "rm ./mochawesome.json || true",
+    "delete-results": "rm -rf cypress/results/* || true",
+    "runTestAndGetReport":"npm run delete-mochawesome-json && npm run delete-results && npm run delete-mochawesome-report && npm run runTest && npm run mochawesome-merge"
   },
   "author": "suro",
   "license": "ISC",
@@ -13,7 +19,11 @@
     "convert-excel-to-json": "^1.7.0",
     "cypress": "^13.6.1",
     "cypress-iframe": "^1.0.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0",
+    "mochawesome-report-generator": "^6.2.0",
     "neat-csv": "5.1.0",
+    "npx": "^10.2.2",
     "typescript": "^5.3.3"
   }
 }
