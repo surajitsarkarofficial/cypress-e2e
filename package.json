@@ -5,16 +5,18 @@
   "main": "index.js",
   "scripts": {
     "cypress": "cypress open --e2e --browser chrome",
-    "runTest":"npx cypress run --headed --browser chrome --spec cypress/e2e/6-fill-form.cy.ts cypress/e2e/9-radio.cy.ts",
+    "runTest": "npx cypress run --headed --browser chrome --spec cypress/e2e/6-fill-form.cy.ts cypress/e2e/9-radio.cy.ts",
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "delete-mochawesome-json": "rm ./mochawesome.json || true",
     "delete-results": "rm -rf cypress/results/* || true",
-    "runTestAndGetReport":"npm run delete-mochawesome-json && npm run delete-results && npm run delete-mochawesome-report && npm run runTest && npm run mochawesome-merge"
+    "runTestAndGetReport": "npm run delete-mochawesome-json && npm run delete-results && npm run delete-mochawesome-report && npm run runTest && npm run mochawesome-merge"
   },
   "author": "suro",
   "license": "ISC",
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/browserify-preprocessor": "latest",
     "@cypress/xpath": "^2.0.3",
     "convert-excel-to-json": "^1.7.0",
     "cypress": "^13.6.1",
